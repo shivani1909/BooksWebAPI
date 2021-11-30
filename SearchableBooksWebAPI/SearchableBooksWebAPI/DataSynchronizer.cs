@@ -10,14 +10,16 @@ namespace SearchableBooksWebAPI
     public class DataSynchronizer
     {
         private IDataProcessor _dataProcessor;
+        private readonly string queryString = "habit";
+        private readonly int retrievalCount = 40;
         public DataSynchronizer()
         {
-            _dataProcessor = new DataProcessor("AIzaSyBB_ - gRT8yxCKCslfEQA19RLN4pWBMksHo"); 
+            _dataProcessor = new DataProcessor(); 
         }
 
         public void InsertDataIntoDb()
         {
-            var booksData = _dataProcessor.Process("habit", 40);
+            var booksData = _dataProcessor.Process(queryString, retrievalCount);
             List<BooksDAL.Books> booksDAL = new List<BooksDAL.Books>();
             foreach (var books in booksData)
             {

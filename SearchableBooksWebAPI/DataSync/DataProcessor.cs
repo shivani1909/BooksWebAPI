@@ -11,11 +11,10 @@ namespace DataSync
     public class DataProcessor : IDataProcessor
     {
         private readonly BooksService _booksService;
-        public DataProcessor(string apiKey)
+        public DataProcessor()
         {
             _booksService = new BooksService(new BaseClientService.Initializer()
             {
-                ApiKey = apiKey,
                 ApplicationName = this.GetType().ToString()
             });
         }

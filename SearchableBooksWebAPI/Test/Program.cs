@@ -13,7 +13,7 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            DataProcessor dataProcessor = new DataProcessor("AIzaSyBB_ - gRT8yxCKCslfEQA19RLN4pWBMksHo");
+            DataProcessor dataProcessor = new DataProcessor();
             var booksdata = dataProcessor.Process("habit", 40);
             //convert datasync books to DAL Books
             List<BooksDAL.Books> booksDAL = new List<BooksDAL.Books>();
